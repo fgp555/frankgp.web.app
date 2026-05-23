@@ -1,89 +1,226 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/12.13.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/12.13.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/12.13.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/12.13.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/12.13.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/12.13.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/12.13.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/12.13.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/12.13.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/12.13.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <title>Frank GP | Portfolio</title>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+    <link rel="icon" href="https://frankgp.com/fgp-favicon.svg" sizes="256x256" />
+
+    <link rel="stylesheet" href="style.css?2605_003" />
+    <link rel="stylesheet" href="mediaqueries.css?2605_003" />
+    <script src="script.js?2605_003" defer></script>
+
+    <link rel="stylesheet" href="./components/experience.css?2605_003" />
+    <script src="./components/experience.js?2605_003" defer></script>
+
+    <link rel="stylesheet" href="./components/projects.css?2605_003" />
+    <script src="./components/projects.js?2605_003" defer></script>
   </head>
+
   <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <!-- DESKTOP NAV -->
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <nav id="desktop-nav">
+      <div class="logo">Frank GP</div>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- MOBILE NAV -->
+
+    <nav id="hamburger-nav">
+      <div class="logo">Frank GP</div>
+
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+
+    <!-- PROFILE -->
+
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="https://github.com/fgp555.png" alt="Frank GP profile picture" />
+      </div>
+
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+
+        <h1 class="title">Frank GP</h1>
+
+        <p class="section__text__p2">Web Developer</p>
+
+        <div class="btn-container">
+          <a
+            href="https://docs.google.com/document/d/1BNcmtMnkNNY--GbI9g10oK6URP9_xBesQ2eM7lPP8Tk/export?format=pdf"
+            target="_blank"
+          >
+            <button class="btn btn-color-2">Download CV</button>
+          </a>
+
+          <button class="btn btn-color-1" onclick="location.href = './#contact'">Contact Info</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+
+      <h1 class="title">About Me</h1>
+
+      <div class="section-container">
+        <!-- <div class="section__pic-container">
+          <img src="https://github.com/fgp555.png" alt="Frank GP profile picture" class="about-pic" />
+        </div> -->
+
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <i class="fa-solid fa-briefcase icon"></i>
+
+              <h3>Experience</h3>
+
+              <p>
+                4+ Years <br />
+                Web & Mobile Development
+              </p>
+            </div>
+
+            <div class="details-container">
+              <i class="fa-solid fa-mobile-screen icon"></i>
+
+              <h3>Services</h3>
+
+              <p>
+                Websites, Mobile Apps <br />
+                & Business Solutions
+              </p>
+            </div>
+          </div>
+
+          <div class="text-container">
+            <p>
+              Full Stack & Mobile Developer from Peru with experience creating modern websites and mobile applications
+              since 2021.
+            </p>
+
+            <p>
+              I help businesses and startups build fast, modern and user-friendly digital products for web, Android and
+              iOS platforms.
+            </p>
+
+            <p>
+              Worked on ecommerce platforms, business systems, mobile apps and custom solutions focused on performance,
+              usability and real-world results.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <i class="fa-solid fa-arrow-down icon arrow" onclick="location.href = './#experience'"></i>
+    </section>
+
+    <!-- EXPERIENCE -->
+
+    <section id="experience">
+      <p class="section__text__p1">Explore My</p>
+
+      <h1 class="title">Experience</h1>
+
+      <div class="experience-details-container">
+        <div class="about-containers" id="experience-container"></div>
+      </div>
+
+      <i class="fa-solid fa-arrow-down icon arrow" onclick="location.href = './#projects'"></i>
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+
+      <h1 class="title">Projects</h1>
+
+      <div class="experience-details-container">
+        <div class="about-containers" id="projects-container"></div>
+      </div>
+
+      <i class="fa-solid fa-arrow-down icon arrow" onclick="location.href = './#contact'"></i>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+
+      <h1 class="title">Contact Me</h1>
+
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <i class="fa-solid fa-envelope icon contact-icon"></i>
+
+          <p>
+            <a href="mailto:fgp555@gmail.com"> fgp555@gmail.com </a>
+          </p>
+        </div>
+
+        <div class="contact-info-container">
+          <i class="fa-brands fa-linkedin icon contact-icon"></i>
+
+          <p>
+            <a href="https://linkedin.com/in/franklingp" target="_blank"> LinkedIn </a>
+          </p>
+        </div>
+
+        <div class="contact-info-container">
+          <i class="fa-brands fa-whatsapp icon contact-icon"></i>
+
+          <p>
+            <a href="https://wa.me/51918221790" target="_blank"> WhatsApp </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <p>© 2026 Frank GP — Full Stack & Mobile Developer</p>
+    </footer>
   </body>
 </html>
